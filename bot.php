@@ -32,7 +32,9 @@
         if($ret){
 
           $answer = $rudes[rand(0,sizeof($rudes))];
+          sendText($answer);
 
+          /*
           $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($answer);
           $response = $bot->replyMessage($replyToken, $textMessageBuilder);
           if ($response->isSucceeded()) {
@@ -40,6 +42,7 @@
           }else{
             echo $response->getHTTPStatus . ' ' . $response->getRawBody();
           }
+          */
 
         }
 
@@ -55,6 +58,8 @@
           $ret_img = contains($verb[1], $images);
 
           if($ret){
+            sendText($bot, $ret[1]);
+            /*
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($ret[1]);
             $response = $bot->replyMessage($replyToken, $textMessageBuilder);
             if ($response->isSucceeded()) {
@@ -62,10 +67,13 @@
             }else{
               echo $response->getHTTPStatus . ' ' . $response->getRawBody();
             }
+            */
           }
 
           if($ret_img){
 
+            sendImage($bot, $ret_img[1], $ret_img[1]);
+            /*
             $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($ret_img[1], $ret_img[1]);
             $response = $bot->replyMessage($replyToken, $textMessageBuilder);
             if ($response->isSucceeded()) {
@@ -73,7 +81,7 @@
             }else{
               echo $response->getHTTPStatus . ' ' . $response->getRawBody();
             }
-
+            */
           }
 
         }else if($answer == ''){

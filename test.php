@@ -6,11 +6,12 @@
   require './vendor/autoload.php';
   require 'db.php';
 
-  $httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($token);
-  $bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $csc]);
+  //$httpClient = new \LINE\LINEBot\HTTPClient\CurlHTTPClient($token);
+  //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $csc]);
 
   //$text = $event['message']['text'];
   $text = 'สูง';
+  $text = $_REQUEST['text'];
 
   $answer = '';
 
@@ -19,25 +20,34 @@
 
   if($ret){
     $answer = $rudes[rand(0,sizeof($rudes))];
-    sendText($bot, $answer);
+    echo $answer;
+    //sendText($bot, $answer);
   }
 
   //Check verbs
   $verb = contains($text, $verbs);
   if($verb){
+
+    print_r($verb[1]);
+    echo '<br>';
+
     //Have 0 text 1 category
     shuffle($profiles);
     $ret = contains($verb[1], $profiles);
+
+    print_r($ret);
 
     //Have 0 text 1 category
     shuffle($images);
     $ret_img = contains($verb[1], $images);
 
     if($ret)
-      sendText($bot, $ret[1]);
+      echo $ret[1];
+      //sendText($bot, $ret[1]);
 
     if($ret_img)
-      sendImage($bot, $ret_img[1]);
+      echo $ret_img[1];
+      //sendImage($bot, $ret_img[1]);
 
   }
 

@@ -530,11 +530,21 @@
       foreach($arr as $a) {
 
           if(is_array($a)){
-            if (stripos($str,$a[0]) !== false)
+
+            echo 'Is Array '.$a[0].' : '.$str.' xxx<br>';
+
+            if (stripos($a[0], $str) !== false){
               return $a;
+            }
+
           }else{
-            if (stripos($str,$a) !== false)
+
+            if (stripos($a, $str) !== false){
+              echo 'Is Array '.$a.' : '.$str.'<br>';
+
               return $a;
+            }
+
           }
 
       }
