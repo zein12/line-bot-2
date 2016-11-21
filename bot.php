@@ -25,7 +25,7 @@
   			$replyToken = $event['replyToken'];
 
         //Process text
-        
+
         //Check Rude Word
         $ret = contains($text, $rudes);
 
@@ -53,6 +53,8 @@
             sendImage($ret_img[1], $ret_img[1]);
           }
 
+        }else if($answer == ''){
+          sendText('ขอตังไปเพิ่มสกิลหน่อย');          
         }
 
         //Create Message
