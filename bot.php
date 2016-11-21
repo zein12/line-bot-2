@@ -24,6 +24,7 @@
   			$replyToken = $event['replyToken'];
 
         //Process text
+        $text .= ' Pichit !!';
 
         //Create Message
         $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($text);
