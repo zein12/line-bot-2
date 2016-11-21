@@ -104,6 +104,7 @@
     if ($response->isSucceeded()) {
         return true;
     }else{
+      echo $response->getHTTPStatus . ' ' . $response->getRawBody();
       return false;
     }
   }
@@ -115,6 +116,7 @@
     if ($response->isSucceeded()) {
         return true;
     }else{
+      echo $response->getHTTPStatus . ' ' . $response->getRawBody();      
       return false;
     }
   }
