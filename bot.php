@@ -31,7 +31,7 @@
 
         if($ret){
           $answer = $rudes[rand(0,sizeof($rudes))];
-          sendText($answer);
+          sendText($bot, $answer);
         }
 
         //Check verbs
@@ -46,15 +46,15 @@
           $ret_img = contains($verb[1], $images);
 
           if($ret){
-            sendText($ret[1]);
+            sendText($bot, $ret[1]);
           }
 
           if($ret_img){
-            sendImage($ret_img[1], $ret_img[1]);
+            sendImage($bot, $ret_img[1], $ret_img[1]);
           }
 
         }else if($answer == ''){
-          sendText('ขอตังไปเพิ่มสกิลหน่อย');          
+          sendText($bot, 'ขอตังไปเพิ่มสกิลหน่อย');
         }
 
         //Create Message
@@ -98,7 +98,7 @@
   	}
   }
 
-  function sendText($m_text){
+  function sendText($bot, $m_text){
     $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($m_text);
     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
     if ($response->isSucceeded()) {
@@ -108,7 +108,7 @@
     }
   }
 
-  function sendImage($m_image, $m_preview){
+  function sendImage($bot, $m_image, $m_preview){
     //$textMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($m_image);
     $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\ImageMessageBuilder($m_image, $m_preview);
     $response = $bot->replyMessage($replyToken, $textMessageBuilder);
