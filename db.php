@@ -13,6 +13,8 @@
     array('แต่งงาน','wife'),
     array('เพศ','sex'),
     array('อาหาร','food'),
+    array('แดก','food'),
+    array('กิน','food'),
     array('งานอดิเรก','hobby'),
     array('เล่น','hobby'),
     array('ยามว่าง','hobby'),
@@ -22,14 +24,15 @@
     array('ก่อนนอน','sweet'),
     array('ของว่าง','sweet'),
     array('ทำงาน','work'),
+    array('งาน','work'),
     array('เรียน','school'),
     array('เมะ','anime'),
     array('ว่าง','anime'),
     array('ตูน','anime'),
     array('สัตว์','pet'),
+    array('เลี้ยง','pet'),
     array('ชอบ','like'),
-    array('รัก','like'),
-    array('เพื่อน','rude')
+    array('รัก','like')
   );
 
   $profiles = array(
@@ -39,27 +42,27 @@
     array('weight','62'),
     array('wife','Siriporn Pinsongsang'),
     array('wedding_day','21 พฤศจิกายน 2015'),
-    array('work_at','ทีโอที'),
-    array('work_at','Phillip Securities (Thailand)'),
+    array('work','ทีโอที'),
+    array('work','Phillip Securities (Thailand)'),
     array('school','โรงเรียนสตรีวิทยา 2'),
     array('school','KMUTNB@CS15'),
     array('home','กรุงเทพมหานคร (น่าจะแถวๆรามอินทรา)'),
     array('sex','ชาย'),
     array('sex','จัดเลยแหละ'),
-    array('fav_food','อาราบาม่าใส่นมเยอะๆ'),
-    array('fav_food','น้ำสมุนไพรปั่นสูตรอินูอิ'),
-    array('fav_anime','15 หยกๆ'),
-    array('fav_anime','ภรรยาผมเป็นประธานนักเรียน'),
-    array('fav_anime','วันจันทร์อันเด้งดึ๋ง'),
-    array('fav_anime','Keijo !!!'),
+    array('food','อาราบาม่าใส่นมเยอะๆ'),
+    array('food','น้ำสมุนไพรปั่นสูตรอินูอิ'),
+    array('anime','15 หยกๆ'),
+    array('anime','ภรรยาผมเป็นประธานนักเรียน'),
+    array('anime','วันจันทร์อันเด้งดึ๋ง'),
+    array('anime','Keijo !!!'),
     array('breakfast','กระแป๋งแมวสดๆ'),
     array('lunch','กระแป๋งแมวนึ่งซีอิ๊ว'),
     array('dinner','สเต็กกระแป๋งแมวทอด 3 ตัว'),
     array('supper','น้ำปั่นกระแป๋งแมว'),
     array('sweet','กระแป๋งแมวเชื่อมโรยน้ำตาล'),
-    array('fav_pet','แมว'),
-    array('fav_pet','หมา'),
-    array('fav_pet','สัตว์ตัวเล็กๆ'),
+    array('pet','แมว'),
+    array('pet','หมา'),
+    array('pet','สัตว์ตัวเล็กๆ'),
     array('hobby','เล่นกับเมีย'),
     array('hobby','นั่งซักผ้าในเครื่อง'),
     array('hobby','สะสมชั้นในชาย'),
@@ -73,7 +76,7 @@
     array('wedding','https://scontent.fbkk2-2.fna.fbcdn.net/t31.0-8/12764440_10205832845489022_3288825530317696940_o.jpg'),
     array('wedding','https://scontent.fbkk2-2.fna.fbcdn.net/t31.0-8/12792390_10205832834128738_2552823873367227678_o.jpg'),
     array('profile','https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/12508958_10205550576072463_3531813573447471053_n.jpg?oh=c1d0169642f3e23dcc065d5bbf2f0387&oe=58CF874E'),
-    array('profile2','https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/11402931_10200737059384553_831246787844931382_n.jpg?oh=ce3deb7bc2c10e4f2f095838fa707dfb&oe=58CA5201'),
+    array('profile','https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/11402931_10200737059384553_831246787844931382_n.jpg?oh=ce3deb7bc2c10e4f2f095838fa707dfb&oe=58CA5201'),
     array('eat','https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/12279137_10205243637959202_4806733305121118878_n.jpg?oh=e5319e08c7103ed77113d97c84c0364c&oe=58D1942D'),
     array('sleep','https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/11017171_10153308003071489_1359626717551714186_n.jpg?oh=cf5969f94a2b416698df3f155f0b4881&oe=58BB651B'),
     array('other','https://scontent.fbkk2-2.fna.fbcdn.net/v/t1.0-9/18132_300728127551_7726116_n.jpg?oh=c254a994b2a5a9abdbbec518a9b29747&oe=58BF0CCF')
@@ -531,17 +534,15 @@
 
           if(is_array($a)){
 
-            echo 'Is Array '.$a[0].' : '.$str.' xxx<br>';
-
-            if (stripos($a[0], $str) !== false){
+            if (stripos($str, $a[0]) !== false){
+              //echo 'Is Array '.$a[0].' : '.$str.' xxx<br>';
               return $a;
             }
 
           }else{
 
-            if (stripos($a, $str) !== false){
-              echo 'Is Array '.$a.' : '.$str.'<br>';
-
+            if (stripos($str, $a) !== false){
+              //echo 'Is Array '.$a.' : '.$str.'<br>';
               return $a;
             }
 
