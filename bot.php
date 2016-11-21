@@ -32,7 +32,7 @@
         if($ret){
 
           $answer = $rudes[rand(0,sizeof($rudes))];
-          sendText($answer);
+          sendText($bot, $answer);
 
           /*
           $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder($answer);
@@ -86,6 +86,8 @@
 
         }else if($answer == ''){
 
+          sendText($bot, 'ขอตังไปเพิ่มสกิลหน่อย');
+          /*
           $textMessageBuilder = new \LINE\LINEBot\MessageBuilder\TextMessageBuilder('ขอตังไปเพิ่มสกิลหน่อย');
           $response = $bot->replyMessage($replyToken, $textMessageBuilder);
           if ($response->isSucceeded()) {
@@ -93,6 +95,7 @@
           }else{
             echo $response->getHTTPStatus . ' ' . $response->getRawBody();
           }
+          */
 
         }
 
