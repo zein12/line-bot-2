@@ -1,7 +1,7 @@
 <?php
 
   $verbs = array(
-    array('ชื่อ','name'),
+    array('Nama','name'),
     array('อายุ','age'),
     array('สูง','height'),
     array('ยาว','height'),
