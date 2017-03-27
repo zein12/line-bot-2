@@ -1,7 +1,7 @@
 <?php
   /* Your Data*/
-  $csc = '5dba7b5e31d22c110ae84c75f82b90f4';
-  $token = 'Yh9WBt5/mhi9VnFR3EPckw23Bd5hnm3zinl+danH68ntVDqA/LUOwAprQf3lZQEoYkNZMng7Hdaw5OLD+lTb2xjIAYp2EIVPtuZj8D4B4Au3JWklZSJ50Rlcen5jc3JqaTJci5ZLCTuY3RAPZ5ZK6wdB04t89/1O/w1cDnyilFU=';
+  $csc = ' a6b4b1a80d9f25eb0a719fc92cef7d86 ';
+  $token = '3/cEBpOR0mjAMUtnHKrSrx3N6FnMVNPYfXBIwMO6HNGaljxuxTxZz2fGrmZYFwqfV3dvAWMa7FEGrmOONfbZ7or1wxYgpjbtFMS0Mkk+RftjvYSrUpThxAHGiivf2M662z2zM5P8BSKby0dJiBG3GQdB04t89/1O/w1cDnyilFU=';
 
   require './vendor/autoload.php';
   require 'db.php';
@@ -10,7 +10,7 @@
   //$bot = new \LINE\LINEBot($httpClient, ['channelSecret' => $csc]);
 
   //$text = $event['message']['text'];
-  $text = 'สูง';
+  $text = 'Tinggi';
   $text = $_REQUEST['text'];
 
   $answer = '';
